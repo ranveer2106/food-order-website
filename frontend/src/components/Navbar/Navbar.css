@@ -1,28 +1,31 @@
-.navbar{
-    width:100%;
-    
+.navbar {
+  width: 100%;
+  font-family: "Outfit", sans-serif;
 }
 
-.logocont{
-    width: 200px;  
-  height: 60px; 
-  overflow: hidden; 
+.logocont {
+  width: 200px;
+  height: 60px;
+  overflow: hidden;
   position: relative;
 }
 
-.logo{
-    width: 100%;       
-  height: 100%;        
-  object-fit: cover;  
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
 }
-.btn{
-    /* background-color: blueviolet; */
-    padding: 1rem 1rem;
-    /* margin-top: 1rem; */
-}
-.btn:hover{
-    background-color: aqua;
-    color: coral;
+
+.btn {
+  /* background-color: blueviolet; */
+  padding: 1rem 1rem;
+  border-radius: 30px;
+  transition: 0.3s;
+  /* margin-top: 1rem; */
 }
 
+.btn:hover {
+  background-color: aqua;
+  color: coral;
+}

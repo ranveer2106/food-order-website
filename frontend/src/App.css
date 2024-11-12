@@ -1,17 +1,17 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+* {
   margin: 0px;
   padding: 0%;
   box-sizing: border-box;
 }
-body{
+body {
   min-height: 100vh;
-
 }
-#root{
+#root {
   min-height: 100vh;
-  min-width:100%;
+  min-width: 100%;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
