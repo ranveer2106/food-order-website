@@ -17,15 +17,45 @@
   object-position: center;
 }
 
-.btn {
-  /* background-color: blueviolet; */
-  padding: 1rem 1rem;
-  border-radius: 30px;
+.navbtn {
+  padding: 0.5rem 1rem;
   transition: 0.3s;
-  /* margin-top: 1rem; */
+  border-bottom: 2px solid transparent;
 }
 
-.btn:hover {
-  background-color: aqua;
-  color: coral;
+.navbtn:hover {
+  border-color: black;
+  color: #fe8d93;
+  cursor: pointer;
+}
+.loginbtn{
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 2px solid black;
+}
+.loginbtn:hover,.righticons:hover{
+  color: #fe8d93;
+  cursor: pointer;
+}
+
+
+.active{
+
+  border-color: black;
+}
+.cart-icon{
+  position: relative;
+}
+.cartdot{
+  position: absolute; 
+  top: 0px; 
+  right: -5px; 
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background-color: #fe8d93; 
+}
+.cart-icon:hover .cartdot{
+  opacity: 0;
 }
