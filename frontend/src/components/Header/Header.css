@@ -1,0 +1,24 @@
+.Header{
+    background: url('./coverimage.jpg');
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    height: 34vw;
+    margin: 30px auto;
+    position: relative;
+}
+.Header-content{
+    position: absolute;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+.Header-content h2{
+    font-size: max(4.5vw,22px);
+}
+.Header-content button{
+    padding: 1vw 2.3vw;
+    border: none;
+    font-size: max(1vw,13px);
+}

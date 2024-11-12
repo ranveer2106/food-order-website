@@ -3,6 +3,7 @@
   margin: 0px;
   padding: 0%;
   box-sizing: border-box;
+  font-family: Outfit;
 }
 body {
   min-height: 100vh;
@@ -15,6 +16,25 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.App{
+  width: 80%;
+  margin: auto;
+}
+
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0%;
+  }  
+  100%{
+    opacity: 100%;
+  }
+}
+
+
+
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

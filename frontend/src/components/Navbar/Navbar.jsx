@@ -2,20 +2,31 @@ import { useState } from 'react'
 // import React,useState from 'react'
 import { assets } from '../../assets/assets'
 import "./Navbar.css"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const [page, setPage] = useState("menu");
+  const [page, setPage] = useState("home");
   return (
     <>
-      <div className='navbar flex justify-between border-b-4 px-12'>
+      <div className='navbar flex justify-between  px-12'>
         <a href="/" className='logocont pt-2'>
           <img src={assets.logo} alt="logo" className=' logo' />
         </a>
         <ul className='flex items-center	nav-main'>
-          <li onClick={()=>setPage("home")} className={`mx-2 navbtn ${page==="home"?"active":" "}` }>Home </li>
-          <li onClick={()=>setPage("menu")} className={`mx-2 navbtn ${page==="menu"?"active":" "}` }>Menu </li>
-          <li onClick={()=>setPage("contact us")} className={`mx-2 navbtn ${page==="contact us"?"active":" "}` }>Contact Us </li>
+          
+          <li onClick={()=>setPage("home")} className={`mx-2 navbtn ${page==="home"?"active":" "}` }> 
+            {/* <Link to='/'>Home</Link>   */}
+            Home
+            </li>
+          <li onClick={()=>setPage("menu")} className={`mx-2 navbtn ${page==="menu"?"active":" "}` }>
+            {/* <Link to='/cart'>Menu</Link>  */}
+            Menu
+            </li>
+          <li onClick={()=>setPage("contact us")} className={`mx-2 navbtn ${page==="contact us"?"active":" "}` }>
+            {/* <Link to='/'>Contact Us</Link> */}
+            Contact US
+          </li>
 
         </ul>
         <ul className='flex items-center '>

@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
   font-family: "Outfit", sans-serif;
+  border-bottom: 1px solid black;
 }
 
 .logocont {
@@ -58,4 +59,8 @@
 }
 .cart-icon:hover .cartdot{
   opacity: 0;
+}
+Link{
+  height: 100%;
+  width: 100%;
 }
