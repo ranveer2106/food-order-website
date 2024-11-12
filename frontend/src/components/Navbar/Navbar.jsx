@@ -1,11 +1,14 @@
-import React from 'react'
+import { useState } from 'react'
+// import React,useState from 'react'
 import { assets } from '../../assets/assets'
 import "./Navbar.css"
 
 const Navbar = () => {
+
+  const [first, setfirst] = useState(0);
   return (
     <>
-      <div className='flex justify-between border-b-4'>
+      <div className='navbar flex justify-between border-b-4 px-12'>
         <a href="/" className='logocont pt-2'>
           <img src={assets.logo} alt="logo" className=' logo' />
         </a>
