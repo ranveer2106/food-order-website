@@ -14,10 +14,10 @@ const Navbar = () => {
           <li className=''><a href="/" className='btn'>Menu</a> </li>
           <li className=''><a href="/" className='btn'> Contact Us</a></li>
         </ul>
-        <div className='pt-4'>
-          <a href='/' className='px-4 btn'>Search</a>
-          <a href="/" className='px-4 btn'>Cart</a>
-          <a href="/" className='px-4 btn'>Login</a>
+        <div className='pt-4 flex'>
+          <a href='/' className='px-4 '><img className='w-8' src={assets.search} alt="/" /></a>
+          <a href="/" className='px-4 '><img className='w-8' src={assets.cart} alt="/" /></a>
+          <a href="/" className='px-4 py-0 '>Login</a>
         </div>
 
       </div>
