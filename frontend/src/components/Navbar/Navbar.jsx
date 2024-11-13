@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import React,useState from 'react'
 import { assets } from '../../assets/assets'
 import "./Navbar.css"
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -14,16 +14,16 @@ const Navbar = () => {
           <img src={assets.logo} alt="logo" className=' logo' />
         </a>
         <ul className='flex items-center	nav-main'>
-          
-          <li onClick={()=>setPage("home")} className={`mx-2 navbtn ${page==="home"?"active":" "}` }> 
+
+          <li onClick={() => setPage("home")} className={`mx-2 navbtn ${page === "home" ? "active" : " "}`}>
             {/* <Link to='/'>Home</Link>   */}
             Home
-            </li>
-          <li onClick={()=>setPage("menu")} className={`mx-2 navbtn ${page==="menu"?"active":" "}` }>
+          </li>
+          <li onClick={() => setPage("menu")} className={`mx-2 navbtn ${page === "menu" ? "active" : " "}`}>
             {/* <Link to='/cart'>Menu</Link>  */}
             Menu
-            </li>
-          <li onClick={()=>setPage("contact us")} className={`mx-2 navbtn ${page==="contact us"?"active":" "}` }>
+          </li>
+          <li onClick={() => setPage("contact us")} className={`mx-2 navbtn ${page === "contact us" ? "active" : " "}`}>
             {/* <Link to='/'>Contact Us</Link> */}
             Contact US
           </li>

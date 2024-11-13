@@ -1,10 +1,12 @@
-.explore-menu{
+.explore-menu {
     gap: 20px;
 }
-.explore-menu-text{
+
+.explore-menu-text {
     width: 60%;
 }
-.explore-menu-list{
+
+.explore-menu-list {
 
     gap: 30px;
     margin: 20px 0px;
@@ -17,7 +19,7 @@
     min-height: 16rem;
 } */
 
-.explore-menu-list::-webkit-scrollbar{
+.explore-menu-list::-webkit-scrollbar {
     display: none;
 }
 
@@ -31,13 +33,22 @@
 
 .explore-menu-item p {
     margin-top: 10px;
-    font-size: max(1.4vw,16px);
+    font-size: max(1.4vw, 16px);
     cursor: pointer;
 }
 
-.explore-menu hr{
+.explore-menu hr {
     height: 2px;
     margin: 10px 0px;
     background-color: black;
     border: none;
+}
+
+.explore-menu-item {
+    cursor: pointer;
+}
+
+.explore-menu-item>.active {
+    border: 2px solid orange;
+    padding: 2px;
 }
