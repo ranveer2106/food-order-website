@@ -44,8 +44,19 @@
 }
 .footer-logo{
     width: 10rem;
-    height: 5rem;
-    object-fit: cover;
-    object-position: center;
+
 
 }
+
+@media (max-width:750px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+    }
+
+    .footer-copyright{
+       text-align: center; 
+    }
+  }

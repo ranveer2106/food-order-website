@@ -2,6 +2,10 @@
     gap: 20px;
 }
 
+.explore-menu h2 {
+    font-size: max(2vw,24px);
+
+}
 .explore-menu-text {
     width: 60%;
 }
@@ -52,3 +56,11 @@
     border: 2px solid orange;
     padding: 2px;
 }
+
+@media (max-width:1050px) {
+    .explore-menu-text{
+        width: 100%;
+        font-size: 14px;
+    }
+  
+  }

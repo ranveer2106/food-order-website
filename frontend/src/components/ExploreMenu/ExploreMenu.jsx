@@ -5,10 +5,10 @@ import { menu_list } from '../../assets/assets'
 const ExploreMenu = ({ category, setCategory }) => {
     return (
         <>
-            <div className='explore-menu flex flex-col	'>
-                <h1 className='font-medium	text-black'>
+            <div className='explore-menu flex flex-col' id="explore-menu">
+                <h2 className='font-medium	text-black'>
                     ExploreMenu
-                </h1>
+                </h2>
                 <p className='explore-menu-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt soluta eius quibusdam, assumenda at magni
                     vitae praesentium voluptatum. Facere earum perferendis provident quasi molestias nulla exercitationem tenetur.
                     Sint animi culpa porro sit, iusto repellat sed illo dolorem aliquam tempora nobis reprehenderit ab incidunt praesentium
