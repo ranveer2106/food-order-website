@@ -1,12 +1,15 @@
-import { React, useState } from 'react'
+import { React, useContext, useState } from 'react'
 // import React,useState from 'react'
 import { assets } from '../../assets/assets'
 import "./Navbar.css"
 import { Link } from 'react-router-dom';
+import { StoreContext } from '../../context/StoreContext'
+
 
 const Navbar = ({ setshowLogin }) => {
 
   const [page, setPage] = useState("home");
+  const {getTotalCartAmount} = useContext(StoreContext);
   return (
     <>
       <div className='navbar flex justify-between  '>
@@ -35,7 +38,7 @@ const Navbar = ({ setshowLogin }) => {
           <Link to='/cart'>
             <li className='cart-icon righticons'>
               <ion-icon name="cart-outline" size="large"></ion-icon>
-              <div className='cartdot'></div>
+              <div className={getTotalCartAmount()===0? "":"cartdot"}></div>
             </li>
           </Link>
           <button onClick={() => setshowLogin(true)} className='loginbtn '>login</button>
