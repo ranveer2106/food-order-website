@@ -2,14 +2,28 @@ import { React, useContext, useState } from 'react'
 // import React,useState from 'react'
 import { assets } from '../../assets/assets'
 import "./Navbar.css"
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext'
 
 
 const Navbar = ({ setshowLogin }) => {
 
   const [page, setPage] = useState("home");
-  const {getTotalCartAmount} = useContext(StoreContext);
+  const {getTotalCartAmount,token,setToken} = useContext(StoreContext);
+
+
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/")
+
+
+    
+  }
+
+
   return (
     <>
       <div className='navbar flex justify-between  '>
@@ -41,7 +55,17 @@ const Navbar = ({ setshowLogin }) => {
               <div className={getTotalCartAmount()===0? "":"cartdot"}></div>
             </li>
           </Link>
-          <button onClick={() => setshowLogin(true)} className='loginbtn '>login</button>
+          {!token?<button onClick={() => setshowLogin(true)} className='loginbtn '>login</button>
+          : <div className='navbar-profile'> 
+
+            <img className='profile-pic' src={assets.profile} alt="" />
+            <ul className="nav-profile-dropdown">
+              <li>Orders</li>
+              <hr />
+              <li onClick={logOut} >log out</li>
+            </ul>
+          </div> 
+          }
           {/* <li><a href='/' className='mx-4 righticons'><ion-icon name="search-outline" size="large"></ion-icon></a></li> */}
           {/* <li className='cart-icon'><a href="/" className='mx-4 righticons'><ion-icon name="cart-outline" size="large"></ion-icon></a>
             <div className='cartdot'></div>

@@ -11,13 +11,15 @@ import food_03 from "./food_03.jpg"
 import food_04 from "./food_04.jpg"
 import playstore from "./playstore.png"
 import appstore from "./appstore.png"
+import profile from "./profile.jpg"
 
 export const assets = {
     logo,
     search,
     cart,
     playstore,
-    appstore
+    appstore,
+    profile
 }
 
 export const menu_list = [

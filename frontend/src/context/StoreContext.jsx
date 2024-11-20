@@ -1,17 +1,21 @@
+import axios from "axios";
 import {
     createContext,
     React,
+    useEffect,
     // useEffect,
     useState
 } from "react";
 
-import { food_list } from "../assets/assets";
 export const StoreContext = createContext(null)
 // export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
 
+    const url = "http://localhost:4000"
+    const [token,setToken]= useState("")
     const [cartItems, setcartItems] = useState({})
+    const [food_list,setFoodList] = useState([])
 
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
@@ -27,6 +31,12 @@ const StoreContextProvider = (props) => {
         setcartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     }
 
+    const fetchFoodList = async ()=> {
+        const response = await axios.get(url+"/api/food/list")
+        setFoodList(response.data.data)
+
+        
+    }
 
 
     // useEffect(() => {
@@ -45,7 +55,7 @@ const StoreContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
 
-                let itemInfo = food_list.find((product) => product.id === Number(item));
+                let itemInfo = food_list.find((product) => product._id === item);
 
 
                 totalAmount += itemInfo.price * cartItems[item];
@@ -60,8 +70,9 @@ const StoreContextProvider = (props) => {
     //     for (const item in cartItems) {
     //         if (cartItems[item] > 0) {
     //             // Ensure item ID matches the type of product.id
-    //             let itemInfo = food_list.find((product) => product.id === Number(item));
-
+    //             let itemInfo = food_list.find((product) => product._id === Number(item));
+    //             console.log(itemInfo);
+                
     //             if (itemInfo) {
     //                 totalAmount += itemInfo.price * cartItems[item];
     //             } else {
@@ -74,13 +85,29 @@ const StoreContextProvider = (props) => {
     // };
 
 
+    useEffect(()=>{
+        async function loadData() {
+            await fetchFoodList()
+            if (localStorage.getItem("token")){
+                setToken(localStorage.getItem("token"))
+            }
+        }
+
+        
+        loadData();
+        // console.log(food_list);
+    },[])
+
     const contextValue = {
         food_list,
         cartItems,
         setcartItems,
         addToCart,
         removeFromCart,
-        getTotalCartAmount
+        getTotalCartAmount,
+        url,
+        token,
+        setToken
     }
 
     return (
