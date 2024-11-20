@@ -12,6 +12,8 @@ import food_04 from "./food_04.jpg"
 import playstore from "./playstore.png"
 import appstore from "./appstore.png"
 import profile from "./profile.jpg"
+import burger from "./burger.jpg"
+import taco from "./taco.jpg"
 
 export const assets = {
     logo,
@@ -32,10 +34,10 @@ export const menu_list = [
     menuImage:menu_02
     },{
     menuName:"Naan",
-    menuImage:menu_03
+    menuImage:burger
     },{
-    menuName:"Shake",
-    menuImage:menu_04
+    menuName:"Taco",
+    menuImage:taco
 }
     ,{
     menuName:"Shake",

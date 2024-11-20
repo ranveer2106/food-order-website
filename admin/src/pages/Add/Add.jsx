@@ -44,7 +44,7 @@ const Add = ({url}) => {
         category:"Salad"
       })
       setImage(false)
-      console.log(response.data.message);
+      // console.log(response.data.message);
       toast.success(response.data.message);
       // alert("Food added successfully")
     }
@@ -83,8 +83,9 @@ const Add = ({url}) => {
                         <select onChange={onChangeHandler} name="category" >
                             <option value="Salad">Salad</option>
                             <option value="Pizza">Pizza</option>
-                            <option value="Naan">Naan</option>
+                            <option value="Naan">Burger</option>
                             <option value="Shake">Shake</option>
+                            <option value="Taco">Taco</option>
                         </select>
                     </div>
                     <div className='add-price flex-col'>
