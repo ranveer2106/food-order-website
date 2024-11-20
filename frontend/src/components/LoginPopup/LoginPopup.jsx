@@ -6,6 +6,23 @@ const LoginPopup = ({setshowLogin}) => {
 
 
     const [currState, setcurrState] = useState("Login")
+
+    const [data,setData] = useState({
+        name:"",
+        email:"",
+        password:""
+    })
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+        setData(data=>({...data,[name]:value}))
+    }
+
+    // useEffect (()=>{
+    //     console.log(data);
+        
+    // },[data])
     // const [currState, setcurrState] = useState("Sign Up")
   return (
     <>
@@ -17,10 +34,10 @@ const LoginPopup = ({setshowLogin}) => {
                 </div>
                 <div className="login-popup-inputs">
                     {currState==="Login"?<></>:
-                    <input type="text" placeholder="Your Name" required/>
+                    <input type="text" name='name' onChange={onChangeHandler} value={data.name} placeholder="Your Name" required/>
                     }
-                    <input type='email' placeholder='Your Email' required/>
-                    <input type="password" placeholder='password' required  />
+                    <input type='email' name='email' onChange={onChangeHandler} value={data.email} placeholder='Your Email' required/>
+                    <input type="password" name='password' onChange={onChangeHandler} value={data.password} placeholder='password' required  />
                 </div>
                 <button>{currState==="Sign Up"?"Create account":"Login"}</button>
                 {currState==="Sign Up"?
