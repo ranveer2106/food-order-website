@@ -14,6 +14,7 @@ import appstore from "./appstore.png"
 import profile from "./profile.jpg"
 import burger from "./burger.jpg"
 import taco from "./taco.jpg"
+import chicken from './Chicken.jpg'
 
 export const assets = {
     logo,
@@ -33,7 +34,7 @@ export const menu_list = [
     menuName:"Pizza",
     menuImage:menu_02
     },{
-    menuName:"Naan",
+    menuName:"Burger",
     menuImage:burger
     },{
     menuName:"Taco",
@@ -43,8 +44,8 @@ export const menu_list = [
     menuName:"Shake",
     menuImage:menu_04
 },{
-    menuName:"Shake",
-    menuImage:menu_04
+    menuName:"Chicken",
+    menuImage:chicken
 }
 ]
 

@@ -118,6 +118,9 @@ Link{
   color: tomato;
 }
 
+.nav-right{
+  padding-top: 6px;
+}
 
 @media (max-width:1050px) {
   .navbar .logo{

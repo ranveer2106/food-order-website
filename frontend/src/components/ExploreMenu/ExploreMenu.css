@@ -31,8 +31,12 @@
     width: 7.5vw;
     min-width: 80px;
     cursor: pointer;
-    border: 50%;
     transition: 0.2s;
+    height: 7.5vw;
+    min-height: 80px;
+    object-fit: cover;
+    /* border: 50%; */
+    border-radius: 50%;
 }
 
 .explore-menu-item p {
@@ -52,8 +56,9 @@
     cursor: pointer;
 }
 
+
 .explore-menu-item>.active {
-    border: 2px solid orange;
+    border: 2px solid #ff8c94;
     padding: 2px;
 }
 
