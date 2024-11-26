@@ -133,7 +133,7 @@ const placeOrder = async (req, res) => {
     const orderOptions = {
       amount: totalAmount, // Total amount in paise
       currency: "INR",
-      receipt: `order_rcptid_${Date.now()}`, // Unique receipt ID
+      receipt: `1111`, // Unique receipt ID
       notes: { items: JSON.stringify(line_items) }, // Optional metadata
     };
 
