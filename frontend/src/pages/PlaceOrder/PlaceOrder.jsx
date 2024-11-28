@@ -9,6 +9,8 @@ import axios from 'axios'
 const PlaceOrder = () => {
   const {getTotalCartAmount,token,food_list,cartItems,url } = useContext(StoreContext);
 
+  // let total = getTotalCartAmount;
+
   const [data,setData] = useState({
     firstName:"",
     lastName:"",
@@ -25,10 +27,11 @@ const PlaceOrder = () => {
         const name = event.target.name;
         const value = event.target.value;
         setData(data=>({...data,[name]:value}))
-  }
-
-  const placeOrder = async (event) => {
-    event.preventDefault();
+      }
+      
+      const placeOrder = async (event) => {
+        event.preventDefault();
+        let total = getTotalCartAmount();
     let orderItems = [];
     food_list.map((item)=>{
       if (cartItems[item._id]>0){
@@ -42,18 +45,22 @@ const PlaceOrder = () => {
     let orderData = {
       address:data,
       items:orderItems,
-      amount:getTotalCartAmount+2
+      amount:total+2
     }
     console.log(orderData);
     console.log(token);
     
     let response = await axios.post(url+"/api/order/place",orderData,{headers:{token}});
     if(response.data.success){
-      const {session_url} = response.data;
-      window.location.replace(session_url);
+      // const {session_url} = response.data;
+      window.location.replace("https://www.youtube.com/");
     }
     else{
       alert("error");
+      console.log("kiki");
+      
+      console.log(response);
+      
     }
   }
 
