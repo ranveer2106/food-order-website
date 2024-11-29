@@ -29,6 +29,11 @@ app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 // app.post('/add-food', upload.single('file'), addFood);
 
+app.get('/payment-success/:order_id', (req, res) => {
+    const { order_id } = req.params;
+    res.send(`Payment was successful for Order ID: ${order_id}! Thank you for your purchase.`);
+});
+
 app.get("/",(req,res)=>{
     res.send("API Working")
 })
