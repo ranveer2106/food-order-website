@@ -20,7 +20,7 @@ const MyOrders = () => {
 
         
         setdata(response.data.data);
-        console.log(response.data.data);
+        // console.log(response.data.data);
     }
 
     useEffect(() => {
@@ -55,7 +55,7 @@ const MyOrders = () => {
                             <p>${order.amount}.00</p>
                             <p>Items : {order.items.length}</p>
                             <p><span>&#x25cf;</span><b className='font-medium'>${order.status}</b></p>
-                            <button className='border-2'> Track order</button>
+                            <button onClick={fetchOrders} className='border-2'> Track order</button>
                         </div>
                     )
                 })}

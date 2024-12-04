@@ -175,7 +175,7 @@ useEffect(()=>{
             />
           </div>
           <input
-            // required
+            required
             type="email"
             name="email"
             onChange={onChangeHandler}
@@ -183,7 +183,7 @@ useEffect(()=>{
             placeholder="Email address"
           />
           <input
-            // required
+            required
             type="text"
             name="street"
             onChange={onChangeHandler}
@@ -192,7 +192,7 @@ useEffect(()=>{
           />
           <div className="multi-fields">
             <input
-              // required
+              required
               type="text"
               name="city"
               onChange={onChangeHandler}
@@ -200,7 +200,7 @@ useEffect(()=>{
               placeholder="City"
             />
             <input
-              // required
+              required
               type="text"
               name="state"
               onChange={onChangeHandler}
@@ -210,7 +210,7 @@ useEffect(()=>{
           </div>
           <div className="multi-fields">
             <input
-              // required
+              required
               type="text"
               name="zipcode"
               onChange={onChangeHandler}
@@ -218,7 +218,7 @@ useEffect(()=>{
               placeholder="Zip Code"
             />
             <input
-              // required
+              required
               type="text"
               name="country"
               onChange={onChangeHandler}
@@ -227,7 +227,7 @@ useEffect(()=>{
             />
           </div>
           <input
-            // required
+            required
             type="text"
             name="phone"
             onChange={onChangeHandler}
