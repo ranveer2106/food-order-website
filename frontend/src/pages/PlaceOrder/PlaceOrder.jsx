@@ -123,11 +123,11 @@ const handlePaymentVerify = async (data) => {
               if (verifyData.message) {
                   // console.log("ggggggggggggs");
                   // navigate("/myorders");
-                  window.location.replace(`${url}/myorders`)
+                  window.location.replace(`https://foodys.onrender.com/myorders`)
                 }
                 else{
                   // navigate("/");
-                  window.location.replace(`${url}/myorders`)
+                  window.location.replace(`https://foodys.onrender.com/`)
                 }
           } catch (error) {
               console.log(error);
