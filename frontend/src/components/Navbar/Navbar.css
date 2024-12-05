@@ -68,20 +68,17 @@ Link{
   width: 100%;
 }
 .righticons{
-  margin:0px 1rem ;
+  margin:0px 2rem ;
 }
-.profile-pic{
-  
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid black;
 
-}
 
 .navbar-profile{
   position: relative;
+  cursor: pointer;
+}
+
+.profilepic ion-icon{
+  font-size: 40px;
 }
 .nav-profile-dropdown{
   position: absolute;
@@ -91,9 +88,10 @@ Link{
 }
 
 .navbar-profile:hover .nav-profile-dropdown{
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
   background-color: #fff2ef;
   padding: 12px 25px;
   border-radius: 4px;

@@ -37,10 +37,10 @@ const Navbar = ({ setshowLogin }) => {
             {/* <Link to='/'>Home</Link>   */}
             Home
           </Link>
-          <a href="#explore-menu" onClick={() => setPage("menu")} className={`mx-2 navbtn ${page === "menu" ? "active" : " "}`}>
+          <Link to="/myorders" onClick={() => setPage("MyOrders")} className={`mx-2 navbtn ${page === "MyOrders" ? "active" : " "}`}>
             {/* <Link to='/cart'>Menu</Link>  */}
-            Menu
-          </a>
+            My Orders
+          </Link>
           <a href="#footer" onClick={() => setPage("contact us")} className={`mx-2 navbtn ${page === "contact us" ? "active" : " "}`}>
             {/* <Link to='/'>Contact Us</Link> */}
             Contact US
@@ -48,7 +48,7 @@ const Navbar = ({ setshowLogin }) => {
 
         </ul>
         <ul className='nav-right flex items-center '>
-          <li className=' righticons' ><ion-icon name="search-outline" size="large"></ion-icon></li>
+          {/* <li className=' righticons' ><ion-icon name="search-outline" size="large"></ion-icon></li> */}
           <Link to='/cart'>
             <li className='cart-icon righticons'>
               <ion-icon name="cart-outline" size="large"></ion-icon>
@@ -57,12 +57,15 @@ const Navbar = ({ setshowLogin }) => {
           </Link>
           {!token?<button onClick={() => setshowLogin(true)} className='loginbtn '>Login</button>
           : <div className='navbar-profile'> 
-
-            <img className='profile-pic' src={assets.profile} alt="" />
+                  
+                  <div className='profilepic'>
+                    <ion-icon  name="person-circle-outline" ></ion-icon>
+                  </div>
+            {/* <img className='profile-pic' src={assets.profile} alt="" /> */}
             <ul className="nav-profile-dropdown">
-              <li onClick={()=>navigate('/myorders')}>Orders</li>
-              <hr />
-              <li onClick={logOut} >log out</li>
+              {/* <li onClick={()=>navigate('/myorders')}>Orders</li> */}
+              {/* <hr /> */}
+              <li onClick={logOut} >Logout</li>
             </ul>
           </div> 
           }

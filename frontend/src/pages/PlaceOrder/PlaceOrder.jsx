@@ -120,7 +120,7 @@ const handlePaymentVerify = async (data) => {
 
               
 
-              if (verifyData.message) {
+              if (verifyData.message==="Payement Successfully") {
                   // console.log("ggggggggggggs");
                   // navigate("/myorders");
                   window.location.replace(`https://foodys.onrender.com/myorders`)
@@ -146,6 +146,7 @@ useEffect(()=>{
     navigate('/cart')
   }
   else if(getTotalCartAmount()===0){
+    alert("please select an item")
     navigate(`/cart`)
   }
 })

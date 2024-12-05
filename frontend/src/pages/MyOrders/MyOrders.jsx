@@ -35,13 +35,13 @@ const MyOrders = () => {
 
   return (
     <>
-        <div className='my-orders'>
+        <div className='my-orders '>
             <h1>My Orders</h1>
-            <div className='container flex flex-col	'>
+            <div className='container mx-auto flex flex-col	'>
                 {data.map((order,index)=>{
                     return(
-                        <div key={index} className='my-orders-order'>
-                            <div>cart icon here</div>
+                        <div key={index} className='my-orders-order rounded-md'>
+                            <div className='cart-icon-orders'><ion-icon name="cart-outline" size="large"></ion-icon></div>
                             <p>
                                 {order.items.map((item,index)=>{
                                     if (index === order.items.length-1){
