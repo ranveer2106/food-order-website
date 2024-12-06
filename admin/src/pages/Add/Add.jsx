@@ -85,7 +85,7 @@ const Add = ({url}) => {
                             <option value="Pizza">Pizza</option>
                             <option value="Burger">Burger</option>
                             <option value="Shake">Shake</option>
-                            <option value="Taco">Taco</option>
+                            <option value="Tacos">Taco</option>
                             <option value="Momos">Momos</option>
                         </select>
                     </div>

@@ -39,7 +39,7 @@ export const menu_list = [
     menuName:"Burger",
     menuImage:burger
     },{
-    menuName:"Taco",
+    menuName:"Tacos",
     menuImage:taco
 }
     ,{
