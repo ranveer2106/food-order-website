@@ -17,6 +17,7 @@
     overflow-x: scroll;
 
 }
+/* .ex */
 
 /* .explore-menu-item{
     min-width: 20rem;
@@ -56,6 +57,9 @@
     cursor: pointer;
 }
 
+.explore-menu-item img:hover{
+    border: 2px solid #ff8c94;
+}
 
 .explore-menu-item>.active {
     border: 2px solid #ff8c94;

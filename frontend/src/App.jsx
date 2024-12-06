@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import MyOrders from './pages/MyOrders/MyOrders'
+import ContactUs from './pages/ContactUs/ContactUs'
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/order' element={<PlaceOrder />} />
           <Route path='/myorders' element={<MyOrders/>} />
+          <Route path='/contactus' element={<ContactUs/>}/>
         </Routes>
         <Footer />
 

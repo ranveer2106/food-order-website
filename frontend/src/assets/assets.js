@@ -15,6 +15,8 @@ import profile from "./profile.jpg"
 import burger from "./burger.jpg"
 import taco from "./taco.jpg"
 import chicken from './Chicken.jpg'
+import Sandwich from './sandwich.jpg'
+import momos from './momos.jpg'
 
 export const assets = {
     logo,
@@ -27,8 +29,8 @@ export const assets = {
 
 export const menu_list = [
     {
-    menuName:"Salad",
-    menuImage: menu_01
+    menuName:"Sandwich",
+    menuImage: Sandwich
     },
     {
     menuName:"Pizza",
@@ -42,10 +44,10 @@ export const menu_list = [
 }
     ,{
     menuName:"Shake",
-    menuImage:menu_04
+    menuImage:food_04
 },{
-    menuName:"Chicken",
-    menuImage:chicken
+    menuName:"Momos",
+    menuImage:momos
 }
 ]
 

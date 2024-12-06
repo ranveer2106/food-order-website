@@ -41,10 +41,10 @@ const Navbar = ({ setshowLogin }) => {
             {/* <Link to='/cart'>Menu</Link>  */}
             My Orders
           </Link>
-          <a href="#footer" onClick={() => setPage("contact us")} className={`mx-2 navbtn ${page === "contact us" ? "active" : " "}`}>
+          <Link to="/contactus" onClick={() => setPage("contact us")} className={`mx-2 navbtn ${page === "contact us" ? "active" : " "}`}>
             {/* <Link to='/'>Contact Us</Link> */}
             Contact US
-          </a>
+          </Link>
 
         </ul>
         <ul className='nav-right flex items-center '>

@@ -1,0 +1,68 @@
+.contactus-form{
+    width: 60%;
+    border: 1px solid #c5c5c5;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: auto;
+    animation: fadeIn 3s;
+}
+
+.box{
+    margin-bottom: 15px;
+    /* width: 100%; */
+    /* width: max(15vw, 300px); */
+    padding: 10px;
+    border: 1px solid #ff8c94;
+    border-radius: 4px;
+    margin: auto;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s;
+    cursor: pointer;
+}
+
+.box:hover{
+    transform: translateY(-10px);    /* Move the button 10px upwards */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.box div{
+    border-right: 2px solid #c5c5c5;
+    margin-right: 5px;
+}
+.contactus-form input ,.query-form{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: #ff8c94;
+}
+
+.contactus-form button{
+    margin: auto;
+    margin-top: 2rem;
+    border: none;
+    color: white;
+    background-color: #ff8c94;
+    width: max(15vw, 200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 1rem 1rem;
+}
+
+.contactus-form button:hover{
+    transform: translateY(-10px);    /* Move the button 10px upwards */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:1024px) {
+    .contactus-form{
+        width: 80%;
+    }
+}
+@media (max-width:600px) {
+    .contactus-form{
+        width: 90%;
+    }
+}

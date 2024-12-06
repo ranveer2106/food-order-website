@@ -9,13 +9,15 @@ const ExploreMenu = ({ category, setCategory }) => {
                 <h2 className='font-medium	text-black'>
                     ExploreMenu
                 </h2>
-                <p className='explore-menu-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt soluta eius quibusdam, assumenda at magni
-                    vitae praesentium voluptatum. Facere earum perferendis provident quasi molestias nulla exercitationem tenetur.
-                    Sint animi culpa porro sit, iusto repellat sed illo dolorem aliquam tempora nobis reprehenderit ab incidunt praesentium
-                    dignissimos exercitationem sequi vel placeat quo, perferendis quod, quam assumenda vero quaerat? Illum obcaecati nostrum
-                    doloremque animi hic. Accusantium necessitatibus assumenda, ullam ipsa quia voluptate, iusto minus aliquam at, nihil debitis. Omnis corporis
-                    dignissimos quod vero obcaecati, natus eligendi saepe amet rem laboriosam molestias id consequuntur sit illum
-                    nulla inventore rerum sed voluptas qui! Eum, amet.
+                <p className='explore-menu-text'>Welcome to Foodys – your go-to food 
+                    delivery service designed to bring your favorite meals right to
+                     your doorstep, faster and more conveniently than ever before!
+                    At Foodys, we understand the power of great food to bring people
+                     together, and our mission is to make sure you never have to wait
+                      long for your next delicious meal. Inspired by the best in the 
+                      food delivery industry, we have created a seamless experience 
+                      that connects hungry customers with local restaurants, all from
+                       the comfort of your own home or office.
                 </p>
                 <div className='explore-menu-list flex justify-between	items-center text-center '>
 

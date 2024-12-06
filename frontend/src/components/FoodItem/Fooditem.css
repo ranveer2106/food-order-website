@@ -23,6 +23,10 @@
     color: #676767;
 }
 
+.food-item-name{
+    font-size: 1.5rem;
+}
+
 .food-item-price{
     font-size: 22px;
     color: #ff8c94;

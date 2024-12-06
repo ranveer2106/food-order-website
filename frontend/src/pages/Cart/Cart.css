@@ -61,7 +61,7 @@
     border: none;
     color: white;
     background-color: #ff8c94;
-    width: max-content(15vw, 200px);
+    width: max(15vw, 200px);
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
