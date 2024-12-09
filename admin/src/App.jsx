@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const url = "https://food-order-website-backend-x6b5.onrender.com";
+  // const url = "http://localhost:4000";
+
   return (
     <>
     <ToastContainer />

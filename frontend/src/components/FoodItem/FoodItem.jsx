@@ -11,7 +11,8 @@ const FoodItem = ({id,name,price,description,image}) => {
     <>
         <div className='food-item my-10 w-full m-auto'>
             <div className="food-item-img-container relative	">
-              <img src={url+`/images/`+image} alt="" className="food-item-image w-full" />
+            <img src={image} alt={name} className="food-item-image w-full" />
+              {/* <img src={url+`/images/`+image} alt="" className="food-item-image w-full" /> */}
                 {
                   !cartItems[id]
                   ?<div>

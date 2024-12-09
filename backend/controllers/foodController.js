@@ -1,34 +1,104 @@
 import foodModel from "../models/foodModel.js";
 import fs from "fs";
+import 'dotenv/config';
+import { v2 as cloudinary } from 'cloudinary'
+
+// cloudinary.js
+// const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.SECRET_KEY_CLOUDINARY
+});
+
+// module.exports = cloudinary;
+
 
 // add food item
 
-const addFood = async (req,res)=>{
+// const addFood = async (req,res)=>{
 
 
-    // if (!req.file) {
-    //     return res.status(400).json({ message: 'No file uploaded' });
-    //   }
+//     // if (!req.file) {
+//     //     return res.status(400).json({ message: 'No file uploaded' });
+//     //   }
 
-    //  console.log(req.file)
+
+//     const result = await cloudinary.uploader.upload_stream(
+//         { resource_type: 'auto' },
+//         (error, result) => {
+//           if (error) {
+//             return res.status(500).json({ error: error.message });
+//           }
+//           res.status(200).json({
+//             imageUrl: result.secure_url,  // Image URL returned by Cloudinary
+//           });
+//         }
+//       );
+//       req.pipe(result);
+
+//       console.log(result.secure_url);
       
-    let image_filename = `${req.file.filename}`;
 
-    const food = new foodModel({
-        name:req.body.name,
-        description:req.body.description,
-        price:req.body.price,
-        category:req.body.category,
-        image:image_filename
-    })
+//     //  console.log(req.file)
+      
+//     let image_filename = `${req.file.filename}`;
+
+//     const food = new foodModel({
+//         name:req.body.name,
+//         description:req.body.description,
+//         price:req.body.price,
+//         category:req.body.category,
+//         image:result.secure_url
+//     })
+//     try {
+//         await food.save();
+//         res.json({success:true,message:"Food Added"})
+//     } catch (error) {
+//         console.log(error)
+//         res.json({success:false,message:"ERROR"})
+//     }
+// }
+
+const addFood = async (req, res) => {
     try {
-        await food.save();
-        res.json({success:true,message:"Food Added"})
+      // Check if file is uploaded
+      if (!req.file) {
+        return res.status(400).json({ message: 'No file uploaded' });
+      }
+  
+      // Upload image to Cloudinary using the 'uploader.upload' method, not upload_stream
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        resource_type: 'auto', // Automatically detect the file type (image, video, etc.)
+      });
+  
+      // Now the result contains the Cloudinary URL, so you can use it
+      const imageUrl = result.secure_url;
+      console.log(imageUrl); // Log the Cloudinary image URL
+  
+      // Create new food item in the database with the Cloudinary URL
+      const food = new foodModel({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image: imageUrl, // Store the image URL
+      });
+  
+      // Save food item to the database
+      await food.save();
+  
+      // Send a success response back to the client
+      res.status(200).json({ success: true, message: 'Food Added', data: food });
+  
     } catch (error) {
-        console.log(error)
-        res.json({success:false,message:"ERROR"})
+      console.error(error);
+      res.status(500).json({ success: false, message: 'Error while adding food', error: error.message });
     }
-}
+  };
+
+
 
 // all food list
 const listFood = async(req,res) =>{
