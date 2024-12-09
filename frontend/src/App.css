@@ -1,23 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
 * {
   margin: 0px;
   padding: 0%;
   box-sizing: border-box;
   font-family: Outfit;
 }
+
 body {
   min-height: 100vh;
 }
+
+.loader {
+  width: fit-content;
+  font-size: 40px;
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #FF8C94;
+  /* Outline color */
+  background: conic-gradient(#FF8C94 0 0, #FF8C94 50%, #FF8C94 100%) 0/0% 100% no-repeat text;
+  /* Gradient with a single color */
+  animation: l1 1s linear infinite;
+}
+
+.loader:before {
+  content: "foodys";
+}
+
+@keyframes l1 {
+  to {
+    background-size: 120% 100%;
+  }
+}
+
+@keyframes l1 {
+  to {
+    background-size: 120% 100%
+  }
+}
+
 #root {
   min-height: 100vh;
   min-width: 100%;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.App{
+.App {
   /* width: 80%; */
   margin: auto;
   width: 100%;
@@ -25,10 +59,11 @@ a {
 
 
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0%;
-  }  
-  100%{
+  }
+
+  100% {
     opacity: 100%;
   }
 }

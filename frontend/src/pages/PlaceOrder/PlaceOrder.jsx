@@ -1,5 +1,7 @@
 
-import React, { useEffect, useState, useContext } from 'react';
+import
+//  React, 
+{ useEffect, useState, useContext } from 'react';
 import './PlaceOrder.css';
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
@@ -33,26 +35,27 @@ const PlaceOrder = () => {
     event.preventDefault();
 
     const totalAmount = getTotalCartAmount();
-    
+
     const orderItems = prepareOrderItems();
 
     const orderData = {
       address: data,
       items: orderItems,
-      amount: totalAmount + 2, 
+      amount: totalAmount + 2,
     };
 
     // console.log("Order Data: ", orderData);
     // console.log("Token: ", token);
 
-    
+
     try {
       const response = await axios.post(
-        `${url}/api/order/place`, 
+        `${url}/api/order/place`,
         orderData, {
-        headers: { 
+        headers: {
           'content-type': 'application/json',
-          token },
+          token
+        },
       });
 
       const dex = await response.data;
@@ -61,10 +64,10 @@ const PlaceOrder = () => {
 
       // console.log("Response: ", dex);
       // console.log(dex.data);
-      
+
 
       if (dex) {
-        handlePaymentVerify(dex.data);  
+        handlePaymentVerify(dex.data);
       } else {
         alert("There was an error placing your order. Please try again.");
       }
@@ -79,16 +82,16 @@ const PlaceOrder = () => {
       if (cartItems[item._id] > 0) {
         return {
           ...item,
-          quantity: cartItems[item._id],  
+          quantity: cartItems[item._id],
         };
       }
       return null;
-    }).filter(Boolean);  
+    }).filter(Boolean);
   };
 
 
-const handlePaymentVerify = async (data) => {
-  const options = {
+  const handlePaymentVerify = async (data) => {
+    const options = {
       key: "rzp_test_lfXfbPqLBLUDQV",
       amount: data.amount,
       currency: data.currency,
@@ -96,60 +99,60 @@ const handlePaymentVerify = async (data) => {
       description: "Test Mode",
       order_id: data.id,
       handler: async (response) => {
-          // console.log("response", response)
-          try {
+        // console.log("response", response)
+        try {
 
-              const res = await axios.post(
-                  `${url}/api/order/verify`,  // The API URL
-                  {
-                      razorpay_order_id: response.razorpay_order_id,
-                      razorpay_payment_id: response.razorpay_payment_id,
-                      razorpay_signature: response.razorpay_signature,
-                      amount: data.amount,
-                      orderId: data.id,
-                      receipt: data.receipt,
-                  },  
-                  {
-                      headers: {
-                          'Content-Type': 'application/json',  
-                      }
-                  }
-              );
+          const res = await axios.post(
+            `${url}/api/order/verify`,  // The API URL
+            {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              amount: data.amount,
+              orderId: data.id,
+              receipt: data.receipt,
+            },
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            }
+          );
 
-              const verifyData = await res.data;
+          const verifyData = await res.data;
 
-              
 
-              if (verifyData.message==="Payement Successfully") {
-                  // console.log("ggggggggggggs");
-                  // navigate("/myorders");
-                  window.location.replace(`https://foodys.onrender.com/myorders`)
-                }
-                else{
-                  // navigate("/");
-                  window.location.replace(`https://foodys.onrender.com/`)
-                }
-          } catch (error) {
-              console.log(error);
+
+          if (verifyData.message === "Payement Successfully") {
+            // console.log("ggggggggggggs");
+            // navigate("/myorders");
+            window.location.replace(`https://foodys.onrender.com/myorders`)
           }
+          else {
+            // navigate("/");
+            window.location.replace(`https://foodys.onrender.com/`)
+          }
+        } catch (error) {
+          console.log(error);
+        }
       },
       theme: {
-          color: "#5f63b8"
+        color: "#5f63b8"
       }
-  };
-  const rzp1 = new window.Razorpay(options);
-  rzp1.open();
-}
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  }
 
-useEffect(()=>{
-  if (!token) {
-    navigate('/cart')
-  }
-  else if(getTotalCartAmount()===0){
-    alert("please select an item")
-    navigate(`/cart`)
-  }
-})
+  useEffect(() => {
+    if (!token) {
+      navigate('/cart')
+    }
+    else if (getTotalCartAmount() === 0) {
+      alert("please select an item")
+      navigate(`/cart`)
+    }
+  })
 
 
   // Render the form with delivery information and cart totals
