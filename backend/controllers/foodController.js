@@ -27,6 +27,12 @@ const addFood = async (req, res) => {
       // Now the result contains the Cloudinary URL, so you can use it
       const imageUrl = result.secure_url;
       console.log(imageUrl); // Log the Cloudinary image URL
+
+      fs.unlink(req.file.path, (err) => {
+        if (err) {
+            console.error("Failed to delete the local file:", err);
+        }
+    });
   
       // Create new food item in the database with the Cloudinary URL
       const food = new foodModel({
