@@ -8,10 +8,10 @@ const foodRouter = express.Router();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-    //     const uploadDir = './uploads';
-    //   if (!fs.existsSync(uploadDir)) {
-    //     fs.mkdirSync(uploadDir); // Create the folder if it doesn't exist
-    //   }
+        const uploadDir = './uploads';
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir); // Create the folder if it doesn't exist
+      }
         cb(null, 'uploads/'); // Specify the folder to store uploaded files
     },
     filename:(req,file,cb)=>{
