@@ -3,8 +3,6 @@ import fs from "fs";
 import 'dotenv/config';
 import { v2 as cloudinary } from 'cloudinary'
 
-// cloudinary.js
-// const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -12,54 +10,7 @@ cloudinary.config({
   api_secret: process.env.SECRET_KEY_CLOUDINARY
 });
 
-// module.exports = cloudinary;
 
-
-// add food item
-
-// const addFood = async (req,res)=>{
-
-
-//     // if (!req.file) {
-//     //     return res.status(400).json({ message: 'No file uploaded' });
-//     //   }
-
-
-//     const result = await cloudinary.uploader.upload_stream(
-//         { resource_type: 'auto' },
-//         (error, result) => {
-//           if (error) {
-//             return res.status(500).json({ error: error.message });
-//           }
-//           res.status(200).json({
-//             imageUrl: result.secure_url,  // Image URL returned by Cloudinary
-//           });
-//         }
-//       );
-//       req.pipe(result);
-
-//       console.log(result.secure_url);
-      
-
-//     //  console.log(req.file)
-      
-//     let image_filename = `${req.file.filename}`;
-
-//     const food = new foodModel({
-//         name:req.body.name,
-//         description:req.body.description,
-//         price:req.body.price,
-//         category:req.body.category,
-//         image:result.secure_url
-//     })
-//     try {
-//         await food.save();
-//         res.json({success:true,message:"Food Added"})
-//     } catch (error) {
-//         console.log(error)
-//         res.json({success:false,message:"ERROR"})
-//     }
-// }
 
 const addFood = async (req, res) => {
     try {
