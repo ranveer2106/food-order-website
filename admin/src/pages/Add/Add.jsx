@@ -14,7 +14,7 @@ const Add = ({url}) => {
     name: "",
     description:"",
     price:"",
-    category:"Salad"
+    category:"Sandwich"
   })
 
   const onChangeHandler = (event) =>{
@@ -41,7 +41,7 @@ const Add = ({url}) => {
         name: "",
         description:"",
         price:"",
-        category:"Salad"
+        category:"Sandwich"
       })
       setImage(false)
       // console.log(response.data.message);
